@@ -31,11 +31,13 @@ class Brute:
                 print('TESTING:', generatedPw)
                 print('FOUND:', ''.join(generatedPw))
                 return True
+
         return False
 
     def incrementPw(self, generatedPw):
         incr = 0
         while True:
+            # TODO: find is too slow (profiler tested)
             pos = self.testChars.find(generatedPw[incr])
             if pos == len(self.testChars)-1:
                 generatedPw[incr] = self.testChars[0]
